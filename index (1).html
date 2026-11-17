@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Globito · Regalos digitales personalizados</title>
+<meta name="description" content="Regalos digitales con su nombre: juegos, tarjetas y mensajes que se abren desde el celular. Entrega el mismo día. Desde RD$300.">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff4fa;--ink:#2a1340;--card:#ffffff;--pink:#ff3d94;--sun:#ffd23f;--mint:#3ddbb0;--soft:#6b4a85;--line:#2a1340;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1b0f2e;--ink:#fff1fa;--card:#2c1948;--soft:#c9a9e6;--line:#fff1fa}}
+:root[data-theme="dark"]{--bg:#1b0f2e;--ink:#fff1fa;--card:#2c1948;--soft:#c9a9e6;--line:#fff1fa}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Fredoka,"Trebuchet MS",system-ui,sans-serif;font-size:1.05rem;line-height:1.5}
+.w{max-width:960px;margin:0 auto;padding:0 20px}
+section{padding:56px 0}
+h1,h2,h3{line-height:1.08;margin:0 0 .4em;font-weight:700}
+h1{font-size:clamp(2.4rem,9vw,4.4rem)}
+h2{font-size:clamp(1.8rem,6vw,2.6rem);text-align:center}
+p{color:var(--soft);margin:.4em 0}
+button,input,select,textarea{font:inherit}
+.btn{display:inline-block;background:var(--pink);color:#fff;border:0;border-radius:999px;padding:14px 28px;font-weight:600;font-size:1.1rem;cursor:pointer;box-shadow:0 5px 0 #b3166a;text-decoration:none}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 #b3166a}
+.btn.mint{background:var(--mint);color:#06382b;box-shadow:0 5px 0 #1b9a78}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.logo{font-weight:700;font-size:1.5rem}
+.logo span{color:var(--pink)}
+.hero{display:grid;gap:28px;align-items:center;padding-top:20px}
+@media(min-width:760px){.hero{grid-template-columns:1.2fr 1fr}}
+.hero p{font-size:1.2rem}
+.hl{background:linear-gradient(transparent 62%,var(--sun) 62%);padding:0 .1em}
+.demo{position:relative;background:var(--card);border:3px solid var(--line);border-radius:28px;padding:22px;text-align:center;box-shadow:8px 8px 0 var(--mint)}
+.demo .bl{font-size:5.5rem;background:none;border:0;cursor:pointer;animation:fl 3s ease-in-out infinite}
+@keyframes fl{50%{transform:translateY(-10px) rotate(4deg)}}
+.demo .tx{min-height:84px;font-weight:600;font-size:1.15rem;display:flex;align-items:center;justify-content:center}
+.demo small{color:var(--soft)}
+.steps,.plans,.occ{display:grid;gap:16px;margin-top:28px}
+@media(min-width:760px){.steps,.plans{grid-template-columns:repeat(3,1fr)}}
+.card{background:var(--card);border:3px solid var(--line);border-radius:22px;padding:22px}
+.step b{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:50%;background:var(--sun);color:#2a1340;margin-bottom:8px}
+.plan{position:relative;display:flex;flex-direction:column}
+.plan.top{background:var(--sun);color:#2a1340;box-shadow:8px 8px 0 var(--pink)}
+.plan.top p,.plan.top li{color:#4a2a63}
+.price{font-size:2.4rem;font-weight:700;margin:.1em 0}
+.price small{font-size:1rem;font-weight:500;opacity:.8}
+.plan ul{padding-left:1.1em;margin:.6em 0 1.2em;flex:1;color:var(--soft)}
+.tag{position:absolute;top:-14px;right:16px;background:var(--pink);color:#fff;border-radius:999px;padding:3px 14px;font-weight:600;font-size:.9rem}
+.chips{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:24px}
+.chips span{background:var(--card);border:2px solid var(--line);border-radius:999px;padding:8px 18px;font-weight:500}
+form{display:grid;gap:12px;max-width:560px;margin:26px auto 0}
+label{font-weight:600}
+input,select,textarea{width:100%;padding:13px 15px;border-radius:14px;border:2px solid var(--line);background:var(--card);color:var(--ink)}
+textarea{min-height:110px;resize:vertical}
+details{background:var(--card);border:2px solid var(--line);border-radius:16px;padding:14px 18px;margin-top:10px}
+summary{font-weight:600;cursor:pointer}
+footer{text-align:center;padding:30px 0 50px;color:var(--soft);font-size:.95rem}
+#cv{position:fixed;inset:0;width:100%;height:100%;pointer-events:none;z-index:5}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:4;background:var(--pink);color:#fff;border-radius:999px;padding:12px 22px;font-weight:700;text-decoration:none;box-shadow:0 5px 0 #b3166a,0 8px 20px rgba(0,0,0,.2)}
+.promo{background:var(--ink);color:var(--bg);text-align:center;padding:9px 14px;font-weight:600;font-size:.95rem}
+.row{display:flex;gap:12px;flex-wrap:wrap;margin-top:6px}
+.about{max-width:620px;margin:0 auto;text-align:center}
+.about p{font-size:1.15rem}
+:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.demo .bl{animation:none}html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<canvas id="cv"></canvas>
+<div class="promo">🎉 Lanzamiento: los primeros 5 pedidos a mitad de precio</div>
+<div class="w">
+<nav><div class="logo">Globito<span>.</span></div><a class="btn mint" href="#pedido" style="padding:9px 20px;font-size:1rem">Pedir regalo</a></nav>
+
+<header class="hero">
+  <div>
+    <h1>El regalo que se <span class="hl">juega</span>, se comparte y no se olvida.</h1>
+    <p>Hacemos regalos digitales con el nombre de quien cumple años: globos que se revientan, mensajes, chistes y una sorpresa al final. Los recibe por enlace, en su celular, el mismo día.</p>
+    <a class="btn" href="#pedido">Quiero el mío 🎁</a>
+    <p style="font-weight:600;color:var(--ink)">⚡ Entrega el mismo día · 💸 Desde RD$300 · ✅ Un ajuste gratis</p>
+    <div class="row"><a class="btn mint" id="wa" href="#pedido">Escribirme por WhatsApp</a><a class="btn" id="demo" href="#" style="background:var(--card);color:var(--ink);box-shadow:0 5px 0 var(--ink)">Ver un ejemplo</a></div>
+  </div>
+  <div class="demo">
+    <small>Pruébalo tú mismo</small>
+    <div><button class="bl" id="bl" aria-label="Reventar globo">🎈</button></div>
+    <div class="tx" id="tx">Toca el globo</div>
+  </div>
+</header>
+
+<section id="como">
+  <h2>Así de fácil</h2>
+  <div class="steps">
+    <div class="card step"><b>1</b><h3>Me cuentas</h3><p>Nombre, gustos, chistes internos y qué quieres decirle.</p></div>
+    <div class="card step"><b>2</b><h3>Lo creo</h3><p>Armo el regalo con su nombre, colores y música favorita.</p></div>
+    <div class="card step"><b>3</b><h3>Lo envías</h3><p>Te paso un enlace. Lo mandas por WhatsApp y listo.</p></div>
+  </div>
+</section>
+
+<section id="precios">
+  <h2>Elige tu regalo</h2>
+  <p style="text-align:center">Pago único. Sin suscripciones.</p>
+  <div class="plans">
+    <div class="card plan">
+      <h3>Tarjeta</h3><p>Rápido y bonito.</p>
+      <div class="price">RD$300 <small>≈ US$5</small></div>
+      <ul><li>Tarjeta interactiva con su nombre</li><li>10 mensajes tuyos</li><li>Confeti y sorpresa final</li><li>Entrega en 24 h</li></ul>
+      <a class="btn" href="#pedido" data-p="Tarjeta">Elegir</a>
+    </div>
+    <div class="card plan top">
+      <span class="tag">El más pedido</span>
+      <h3>Globos</h3><p>El juego de los mensajes.</p>
+      <div class="price">RD$600 <small>≈ US$10</small></div>
+      <ul><li>Juego de globos con tantos mensajes como años cumple</li><li>Chistes y fotos si quieres</li><li>Colores y estilo a su gusto</li><li>Pregunta final con reacción</li></ul>
+      <a class="btn" href="#pedido" data-p="Globos">Elegir</a>
+    </div>
+    <div class="card plan">
+      <h3>Experiencia</h3><p>Hecho 100% para ella o él.</p>
+      <div class="price">RD$1,000 <small>≈ US$17</small></div>
+      <ul><li>Hasta 3 minijuegos personalizados</li><li>Temática de su artista o juego favorito</li><li>Enlace con su nombre</li><li>Entrega prioritaria el mismo día</li></ul>
+      <a class="btn" href="#pedido" data-p="Experiencia">Elegir</a>
+    </div>
+  </div>
+</section>
+
+<section>
+  <h2>Regalo doble 🎁📱</h2>
+  <p style="text-align:center">Algo hecho a mano, más un regalo digital que se abre con un código QR.</p>
+  <div class="card plan top" style="max-width:560px;margin:28px auto 0">
+    <span class="tag">Nuevo</span>
+    <h3>Manualidad + juego digital</h3>
+    <div class="price">Desde RD$1,200</div>
+    <ul><li>Una pieza hecha a mano: tarjeta, caja decorada, llavero o lo que elijas</li><li>Un QR dentro que abre el juego con su nombre</li><li>Lo recibes en 2 a 3 días</li><li>Entrega o recogida, lo coordinamos por WhatsApp</li></ul>
+    <a class="btn" href="#pedido" data-p="Regalo doble (con manualidad)">Quiero el regalo doble</a>
+  </div>
+</section>
+
+<section>
+  <h2>Hecho a su estilo</h2>
+  <p style="text-align:center">Cada regalo sale con el tema que esa persona ama.</p>
+  <div class="chips"><span>✂️ Manualidades</span><span>🎵 Su música</span><span>🎮 Gamers</span><span>🌸 Anime y K-pop</span><span>⚽ Deportes</span><span>🐶 Mascotas</span></div>
+  <h2 style="margin-top:48px">Para cualquier ocasión</h2>
+  <div class="chips"><span>🎂 Cumpleaños</span><span>💘 San Valentín</span><span>💍 Aniversario</span><span>🎓 Graduación</span><span>🤝 Amistad</span><span>🙏 Pedir perdón</span><span>👩 Día de las Madres</span><span>🎄 Navidad</span></div>
+</section>
+
+<section>
+  <h2>Quién lo hace</h2>
+  <div class="about">
+    <p>Soy Windows, de República Dominicana. Programo juegos y apps, y me importan los detalles.</p>
+    <p>Cada regalo lo armo yo, con la historia de quien lo recibe. No usamos plantillas genéricas: tu nombre, tus chistes y tu música.</p>
+    <p style="font-weight:600;color:var(--ink)">Un ajuste gratis, y si algo no te convence, lo hablamos.</p>
+  </div>
+</section>
+
+<section id="pedido">
+  <h2>Pide el tuyo</h2>
+  <p style="text-align:center">Llena esto y se abre WhatsApp con tu pedido listo para enviar.</p>
+  <form id="f">
+    <div><label for="pk">Regalo</label>
+    <select id="pk"><option>Tarjeta</option><option selected>Globos</option><option>Experiencia</option><option>Regalo doble (con manualidad)</option></select></div>
+    <div><label for="who">¿Para quién es?</label><input id="who" required placeholder="Nombre de la persona"></div>
+    <div><label for="oc">Ocasión</label><input id="oc" placeholder="Cumpleaños, aniversario..."></div>
+    <div><label for="wh">¿Para cuándo lo necesitas?</label><input id="wh" placeholder="Hoy, mañana, 14 de febrero..."></div>
+    <div><label for="dt">Cuéntame de ella o él</label><textarea id="dt" placeholder="Música que le gusta, chistes que se hacen, colores, algo que quieras decirle..."></textarea></div>
+    <button class="btn" type="submit">Enviar pedido por WhatsApp</button>
+  </form>
+</section>
+
+<section>
+  <h2>Preguntas</h2>
+  <div style="max-width:620px;margin:0 auto">
+    <details><summary>¿Qué recibo exactamente?</summary><p>Un enlace a una página con el regalo. Se abre en cualquier celular, sin instalar nada.</p></details>
+    <details><summary>¿Cuánto tarda?</summary><p>Normalmente 24 horas. Si es para hoy, pídelo como Experiencia y se hace prioritario.</p></details>
+    <details><summary>¿Cómo pago?</summary><p>Por transferencia bancaria o en efectivo si estás cerca. Te confirmo los datos por WhatsApp. Pagas la mitad al empezar y el resto cuando lo apruebas.</p></details>
+    <details><summary>¿Puedo pedir cambios?</summary><p>Sí, un ajuste incluido después de que lo veas.</p></details>
+  </div>
+</section>
+</div>
+<a class="fab" href="#pedido">🎁 Pedir mi regalo</a>
+<footer>Hecho con cariño en República Dominicana 🇩🇴 · Globito</footer>
+
+<script>
+// CAMBIA ESTO: tu número de WhatsApp con código de país, solo números (ejemplo RD: 18091234567)
+var WHATSAPP="18297445284";
+var DEMO_URL=""; // pega aquí el enlace del regalo de ejemplo cuando lo compartas
+(function(){var w=document.getElementById("wa");if(w)w.href="https://wa.me/"+WHATSAPP+"?text="+encodeURIComponent("Hola, quiero un regalo digital Globito.");var d=document.getElementById("demo");if(d){if(DEMO_URL){d.href=DEMO_URL;d.target="_blank"}else d.style.display="none"}})();
+function $(i){return document.getElementById(i)}
+var M=["Alguien te quiere más de lo que dice 💖","Hoy te toca ser la protagonista 🎉","Tu risa vale más que cualquier regalo ✨","Eres de las buenas personas, no cambies 🌈"],mi=0;
+var cv=$("cv"),cx=cv.getContext("2d"),P=[],run=false,COL=["#ff3d94","#ffd23f","#3ddbb0","#7b5cff","#ff8a3d"];
+function sz(){cv.width=innerWidth;cv.height=innerHeight}addEventListener("resize",sz);sz();
+function burst(r,n){var x=r.left+r.width/2,y=r.top+r.height/2;for(var i=0;i<n;i++){var a=Math.random()*6.28,s=2+Math.random()*6;P.push({x:x,y:y,vx:Math.cos(a)*s,vy:Math.sin(a)*s-2,c:COL[i%5],l:60+Math.random()*40,w:5+Math.random()*5})}if(!run){run=true;tick()}}
+function tick(){cx.clearRect(0,0,cv.width,cv.height);P=P.filter(function(p){return p.l>0});P.forEach(function(p){p.x+=p.vx;p.y+=p.vy;p.vy+=.18;p.l--;cx.fillStyle=p.c;cx.fillRect(p.x,p.y,p.w,p.w*.6)});if(P.length)requestAnimationFrame(tick);else{run=false;cx.clearRect(0,0,cv.width,cv.height)}}
+$("bl").onclick=function(){var b=$("bl");burst(b.getBoundingClientRect(),40);$("tx").textContent=M[mi++%M.length];b.style.visibility="hidden";setTimeout(function(){b.style.visibility="visible"},900)};
+document.querySelectorAll("[data-p]").forEach(function(a){a.onclick=function(){$("pk").value=a.getAttribute("data-p")}});
+$("f").onsubmit=function(e){e.preventDefault();
+  var t="Hola, quiero un regalo digital Globito.%0A%0ARegalo: "+encodeURIComponent($("pk").value)+"%0APara: "+encodeURIComponent($("who").value)+"%0AOcasión: "+encodeURIComponent($("oc").value||"-")+"%0APara cuándo: "+encodeURIComponent($("wh").value||"-")+"%0ADetalles: "+encodeURIComponent($("dt").value||"-");
+  window.open("https://wa.me/"+WHATSAPP+"?text="+t,"_blank")};
+</script>
+</body>
+</html>
